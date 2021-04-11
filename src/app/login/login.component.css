@@ -1,0 +1,25 @@
+.loginForm{
+    width: 300px;
+}
+
+.formcontent{  
+    width: 430px;
+    border: 5px solid rgb(98, 100, 112);
+    padding: 30px;
+    margin-top: 25px;
+    margin-left: 340px;
+}
+  
+.button {
+    background-color: rgba(11, 30, 114, 0.877);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+

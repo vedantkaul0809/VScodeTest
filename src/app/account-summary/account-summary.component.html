@@ -1,0 +1,62 @@
+<div>
+  <div class="inline">
+    <button (click)="onLogoutButton()" class="var" style="margin-left:1380px; margin-right:10px;margin-top: -25px; float: left;">
+      <a style="color: white;">Logout</a> 
+    </button>
+    <button class="var" style="margin-left:1200px; margin-right:10px;margin-top: -25px; float: left;">
+      <a [routerLink]="['/change-password', this.AccountNum]" style="color: white;">Change Password</a> 
+    </button>
+  </div>
+  <div class="sidenav2">
+    <a routerLink="/dashboard">Dashboard</a>
+    <a [routerLink]="['/userProfile', this.customId]">User Profile</a>
+    <a [routerLink]="['/account-summary', this.customId]">Account Summary</a>
+    <span style="color:white; margin-left: 17px; font-size: 28px; ">Funds Transfer</span>
+
+        <div >
+            <a style="font-size:larger; margin-left: 40px;" routerLink="/addBeneficiary">Add Beneficiary</a>
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/imps">IMPS Transaction</a>
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/rtgs">RTGS Transaction</a>      
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/neft">NEFT Transaction</a>
+        </div>
+      
+    <a [routerLink]="['/accountStatement', this.AccountNum]">Account Statement</a>
+  </div>
+        <br/>
+        <h2 style="margin-left:280px">Account Summary</h2> 
+        <table class="table">
+            <tr>
+              <th>Account Number</th>
+              <td>{{AcctNo}}</td>
+            </tr>
+            <tr>
+              <th>View Balance</th>
+              <td>{{Bal}}</td>
+            </tr>
+             </table> 
+          <br/>
+          <br/>
+        <div *ngIf="transaction">
+          <h3 style="margin-left:280px">View Last 5 Transactions</h3> 
+          <table>
+              <tr>
+                  <th>Transaction Id</th>
+                  <th>To Account</th>
+                  <th>Transaction Amount</th>
+                  <th>Transaction Type</th>
+                  <th>Maturity Instruction</th>
+                  <th>Remark</th>
+                  <th>Transaction Date and Time</th>
+              </tr>
+              <tr *ngFor="let t of transaction">
+                  <td>{{t.TId}}</td>
+                  <td>{{t.ToAccountNumber}}</td>
+                  <td>{{t.Amount}}</td>
+                  <td>{{t.TransactionType}}</td>
+                  <td>{{t.MaturityInstruction}}</td>
+                  <td>{{t.Remark}}</td>
+                  <td>{{t.TransactionDate}}</td>
+              </tr>
+          </table>
+        </div>
+</div>

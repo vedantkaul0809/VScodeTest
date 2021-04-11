@@ -1,0 +1,20 @@
+.button {
+    background-color: rgba(11, 30, 114, 0.877);
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.container {
+    width: 1000px;
+    height:740px;
+    margin-top: 20px;
+    margin-left: 160px;
+    background-color:rgb(233, 236, 250);
+}

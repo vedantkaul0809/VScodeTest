@@ -1,0 +1,284 @@
+<br>
+<div class="formcontent">
+    <h3 style="margin-left: 120px;">Open A Savings Account</h3> <br>
+    <h5>Enter User Details</h5>
+    <br>
+    <form #UserDetailsForm='ngForm' (ngSubmit)=' saveUserDetails(userDetails)'>
+    <div>
+        <label for='Title'>Title</label>
+        <select class="form-control" id="Title" name="Title" required [(ngModel)]='userDetails.Title' 
+            #Titlecontrol='ngModel'>
+            <option value="Mr">Mr.</option>
+            <option value="Ms">Ms.</option>
+            <option value="Mrs">Mrs.</option>
+        </select>
+        <!-- <span class="help-block alert-danger">
+            Title is Required
+        </span> -->
+    </div>
+    <div>
+        <label for='FirstName'>First Name</label>
+        <input class="form-control" type='text' id='FirstName' name='FirstName' required 
+            [(ngModel)]='userDetails.FirstName' #FirstNamecontrol='ngModel'/>
+    </div>
+    <div *ngIf="FirstNamecontrol.touched && FirstNamecontrol.invalid">
+        <span class="help-block alert-danger" *ngIf="FirstNamecontrol.touched && FirstNamecontrol.invalid">
+            FirstName is Required
+        </span>
+    </div>
+    <div>
+        <label for='MiddleName'>Middle Name</label>
+        <input class="form-control" type='text' id='MiddleName' name='MiddleName' [(ngModel)]='userDetails.MiddleName' 
+            #MiddleNamecontrol='ngModel'/>
+    </div>
+    <div>
+        <label for='LastName'>Last Name</label>
+        <input class="form-control" type='text' id='LastName' name='LastName' required 
+            [(ngModel)]='userDetails.LastName' #LastNamecontrol='ngModel'/>
+    </div>
+    <div *ngIf="LastNamecontrol.touched && LastNamecontrol.invalid">
+        <span class="help-block alert-danger" *ngIf="LastNamecontrol.touched && LastNamecontrol.invalid">
+            LastName is Required
+        </span>
+    </div>
+    <div>
+        <label for='FatherName'>Father's Name</label>
+        <input class="form-control" type='text' id='FatherName' name='FatherName' required 
+            [(ngModel)]='userDetails.FatherName' #FatherNamecontrol='ngModel'/>
+    </div>
+    <div *ngIf="FatherNamecontrol.touched && FatherNamecontrol.invalid">
+        <span class="help-block alert-danger" *ngIf="FatherNamecontrol.touched && FatherNamecontrol.invalid">
+            Father's Name is Required
+        </span>
+    </div>
+    <div>
+        <label for='MobileNumber'>Mobile Number</label>
+        <input class="form-control" type='number' id='MobileNumber'  pattern="[0-9]{10}" name='MobileNumber' required 
+            [(ngModel)]='userDetails.MobileNumber' #MobileNumbercontrol='ngModel'/>
+    </div>
+    <div *ngIf="MobileNumbercontrol.touched && MobileNumbercontrol.invalid">
+        <span class="help-block alert-danger" *ngIf="MobileNumbercontrol.touched && MobileNumbercontrol.invalid">
+            Mobile Number is Required
+        </span>
+    </div>
+    <div *ngIf="MobileNumbercontrol.touched && MobileNumbercontrol.invalid">
+        <span class="help-bock alert-danger" *ngIf="MobileNumbercontrol.touched && MobileNumbercontrol.invalid">
+            Enter Valid Mobile Number
+        </span>
+    </div>
+    <div>
+        <label for='Email'>Email Id</label>
+        <input class="form-control" type='text' id='Email' name='Email' required [(ngModel)]='userDetails.Email' 
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  #Emailcontrol='ngModel'/>
+    </div>
+    <div *ngIf="Emailcontrol.touched && Emailcontrol.invalid">
+        <span class="help-block alert-danger" *ngIf="Emailcontrol.touched && Emailcontrol.invalid">
+            Email is Required
+        </span>
+    </div>
+    <div *ngIf="Emailcontrol.touched && Emailcontrol.invalid">
+        <span class="help-bock alert-danger" *ngIf="Emailcontrol.touched && Emailcontrol.invalid">
+            Enter Valid Email Id
+        </span>
+    </div>
+    <div>
+        <label for='AadharNumber'>Aadhar Number</label>
+        <input class="form-control" type='text' id='AadharNumber' name='AadharNumber' required pattern="[0-9]{12}" 
+            [(ngModel)]='userDetails.AadharNumber' #AadharNumbercontrol='ngModel'/>
+    </div>
+    <div *ngIf="AadharNumbercontrol.touched && AadharNumbercontrol.invalid">
+        <span class="help-block alert-danger" *ngIf="AadharNumbercontrol.touched && AadharNumbercontrol.invalid">
+            Aadhar Number is Required
+        </span>
+    </div>
+    <div *ngIf="AadharNumbercontrol.touched && AadharNumbercontrol.invalid">
+        <span class="help-bock alert-danger" *ngIf="AadharNumbercontrol.touched && AadharNumbercontrol.invalid">
+            Enter Valid Aadhar Number
+        </span>
+    </div>
+    <div>
+        <label for='DOB'>Date Of Birth</label>
+        <input class="form-control" type='date' id='DOB' name='DOB' required [(ngModel)]='userDetails.DOB' 
+            #DOBcontrol='ngModel'/>
+    </div>
+    <div *ngIf="DOBcontrol.touched && DOBcontrol.invalid">
+        <span class="help-block alert-danger" *ngIf="DOBcontrol.touched && DOBcontrol.invalid">
+            DOB is Required
+        </span>
+    </div>
+    <hr/>
+    <h5>Residential Address</h5>
+    <div>
+        <div>
+            <label for='ResidentialAddressLine1'>Address Line 1</label>
+            <input class="form-control" type='text' id='ResidentialAddressLine1' name='ResidentialAddressLine1' required 
+                [(ngModel)]='userDetails.ResidentialAddressLine1' #ResidentialAddressLine1control='ngModel'/>
+        </div>
+        <div *ngIf="ResidentialAddressLine1control.touched && ResidentialAddressLine1control.invalid">
+            <span class="help-block alert-danger" *ngIf="ResidentialAddressLine1control.touched && ResidentialAddressLine1control.invalid">
+                Residential Address Line 1 is Required
+            </span>
+        </div>
+        <div>
+            <label for='ResidentialAddressLine2'>Address Line 2</label>
+            <input class="form-control" type='text' id='ResidentialAddressLine2' name='ResidentialAddressLine2' required
+               [(ngModel)]='userDetails.ResidentialAddressLine2' #ResidentialAddressLine2control='ngModel'/>
+        </div>
+        <div *ngIf="ResidentialAddressLine2control.touched && ResidentialAddressLine2control.invalid">
+            <span class="help-block alert-danger" *ngIf="ResidentialAddressLine2control.touched && ResidentialAddressLine2control.invalid">
+                Residential Address Line 2 is Required
+            </span>
+        </div>
+        <div>
+            <label for='ResidentialLandmark'>Landmark</label>
+            <input class="form-control" type='text' id='ResidentialLandmark' name='ResidentialLandmark' 
+                 [(ngModel)]='userDetails.ResidentialLandmark' #ResidentialLandmarkcontrol='ngModel'/>
+        </div>
+        <div>
+            <label for='ResidentState'>State</label>
+            <input class="form-control" type='text' id='ResidentState' name='ResidentState' required
+               [(ngModel)]='userDetails.ResidentState' #ResidentStatecontrol='ngModel'/>
+        </div>
+        <div *ngIf="ResidentStatecontrol.touched && ResidentStatecontrol.invalid">
+            <span class="help-block alert-danger" *ngIf="ResidentStatecontrol.touched && ResidentStatecontrol.invalid">
+                Residential State is Required
+            </span>
+        </div>
+        <div>
+            <label for='ResidentCity'>City</label>
+            <input class="form-control" type='text' id='ResidentCity' name='ResidentCity' required
+                [(ngModel)]='userDetails.ResidentialCity' #ResidentialCitycontrol='ngModel'/>
+        </div>
+        <div *ngIf="ResidentialCitycontrol.touched && ResidentialCitycontrol.invalid">
+            <span class="help-block alert-danger" *ngIf="ResidentialCitycontrol.touched && ResidentialCitycontrol.invalid">
+                Residential City is Required
+            </span>
+        </div>
+        <div>
+            <label for='ResidentPinCode'>Pincode</label>
+            <input class="form-control" type='number' id='ResidentPinCode' name='ResidentPinCode' required
+                [(ngModel)]='userDetails.ResidentialPinCode' #ResidentialPinCodecontrol='ngModel'/>
+        </div>
+        <div *ngIf="ResidentialPinCodecontrol.touched && ResidentialPinCodecontrol.invalid">
+            <span class="help-block alert-danger" *ngIf="ResidentialPinCodecontrol.touched && ResidentialPinCodecontrol.invalid">
+                Residential PinCode is Required
+            </span>
+        </div>
+    </div>
+    <br/>
+
+    <h5>Permanent Address</h5>
+    <div>
+        <input type="checkbox" id="Address" name="Address" [(ngModel)]="addressSame" (change)="onCheckboxChange()"/>
+        <label style="margin-left: 10px;">Permanent Address is same as Mailing Address</label>
+        <div>
+            <label for='PermanentAddressLine1'>Address Line 1</label>
+            <input class="form-control"type='text' id='PermanentAddressLine1' name='PermanentAddressLine1' required
+                 [(ngModel)]='userDetails.PermanentAddressLine1' #PermanentAddressLine1control='ngModel'/>
+        </div>
+        <div *ngIf="PermanentAddressLine1control.touched && PermanentAddressLine1control.invalid">
+            <span class="help-block alert-danger" *ngIf="PermanentAddressLine1control.touched && PermanentAddressLine1control.invalid">
+                Permanent Address Line 1 is Required
+            </span>
+        </div>
+        <div>
+            <label for='PermanentAddressLine2'>Address Line 2</label>
+            <input class="form-control" type='text' id='PermanentAddressLine2' name='PermanentAddressLine2' required
+                [(ngModel)]='userDetails.PermanentAddressLine2' #PermanentAddressLine2control='ngModel'/>
+        </div>
+        <div *ngIf="PermanentAddressLine2control.touched && PermanentAddressLine2control.invalid">
+            <span class="help-block alert-danger" *ngIf="PermanentAddressLine2control.touched && PermanentAddressLine2control.invalid">
+                Permanent Address Line 2 is Required
+            </span>
+        </div>
+        <div>
+            <label for='PermanentLandmark'>Landmark</label>
+            <input class="form-control" type='text' id='PermanentLandmark' name='PermanentLandmark'
+                [(ngModel)]='userDetails.PermanentLandmark' #PermanentLandmarkcontrol='ngModel'/>
+        </div>
+        <div>
+            <label for='PermanentState'>State</label>
+            <input class="form-control" type='text' id='PermanentState' name='PermanentState' required
+                [(ngModel)]='userDetails.PermanentState' #PermanentStatecontrol='ngModel'/>
+        </div>
+        <div *ngIf="PermanentStatecontrol.touched && PermanentStatecontrol.invalid">
+            <span class="help-block alert-danger" *ngIf="PermanentStatecontrol.touched && PermanentStatecontrol.invalid">
+                Permanent State is Required
+            </span>
+        </div>
+        <div>
+            <label for='PermanentCity'>City</label>
+            <input class="form-control" type='text' id='PermanentCity' name='PermanentCity' required
+                [(ngModel)]='userDetails.PermanentCity' #PermanentCitycontrol='ngModel'/>
+        </div>
+        <div *ngIf="PermanentCitycontrol.touched && PermanentCitycontrol.invalid">
+            <span class="help-block alert-danger" *ngIf="PermanentCitycontrol.touched && PermanentCitycontrol.invalid">
+                Permanent City is Required
+            </span>
+        </div>
+        <div>
+            <label for='PermanentPinCode'>Pincode</label>
+            <input class="form-control" type='number' id='PermanentPinCode' name='PermanentPinCode' required
+                [(ngModel)]='userDetails.PermanentPinCode' #PermanentPinCodecontrol='ngModel'/>
+        </div>
+        <div *ngIf="PermanentPinCodecontrol.touched && PermanentPinCodecontrol.invalid">
+            <span class="help-block alert-danger" *ngIf="PermanentPinCodecontrol.touched && PermanentPinCodecontrol.invalid">
+                Permanent Pin Code is Required
+            </span>
+        </div>
+    </div>
+    <br/>
+    <h5>Occupation Details</h5>
+    <div>
+        <div>
+            <label for='OccupationalType'>Occupational Type</label>
+            <input class="form-control" type='text' id='OccupationalType' name='OccupationalType' required
+                 [(ngModel)]='userDetails.OccupationalType' #OccupationalTypecontrol='ngModel'/>
+        </div>
+        <div *ngIf="OccupationalTypecontrol.touched && OccupationalTypecontrol.invalid">
+            <span class="help-block alert-danger" *ngIf="OccupationalTypecontrol.touched && OccupationalTypecontrol.invalid">
+                Occupational Type is Required
+            </span>
+        </div>
+        <div>
+            <label for='SourceOfIncome'>Source Of Income</label>
+            <input class="form-control" type='text' id='SourceOfIncome' name='SourceOfIncome' required
+                 [(ngModel)]='userDetails.SourceOfIncome' #SourceOfIncomecontrol='ngModel'/>
+        </div>
+        <div *ngIf="SourceOfIncomecontrol.touched && SourceOfIncomecontrol.invalid">
+            <span class="help-block alert-danger" *ngIf="SourceOfIncomecontrol.touched && SourceOfIncomecontrol.invalid">
+                Source of Income is Required
+            </span>
+        </div>
+        <div>
+            <label for='GrossAnnualIncome'>Gross Annual Income</label>
+            <input class="form-control" type='text' id='GrossAnnualIncome' name='GrossAnnualIncome' required
+                [(ngModel)]='userDetails.GrossAnnualIncome' #GrossAnnualIncomecontrol='ngModel'/>
+        </div>
+        <div *ngIf="GrossAnnualIncomecontrol.touched && GrossAnnualIncomecontrol.invalid">
+            <span class="help-block alert-danger" *ngIf="GrossAnnualIncomecontrol.touched && GrossAnnualIncomecontrol.invalid">
+                Gross Annual Income is Required
+            </span>
+        </div>
+    </div>
+    <br/>
+    <label>Debit/ATM Card</label>
+    <label>Do you want a Debit card?</label>
+    <select class="form-control" id="Debit" name="Debit"  [(ngModel)]='userDetails.DebitCard' #DebitCardcontrol='ngModel'>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    <br/>
+    <input type="checkbox" id="IsNetBanking" name="IsNetBanking"
+        [(ngModel)]='userDetails.IsNetBanking' #IsNetBankingcontrol='ngModel'/>  
+    <label style="margin-left: 10px;">  Opt for Net Banking  </label>
+    <br/>
+    <input type="checkbox" id="Agree" name="Agree" [(ngModel)]="agreeCheckbox" required/>  
+    <label style="margin-left: 10px;">  I Agree...  </label>
+    <br/>
+    <div>
+        <button class="button"  type='submit' style="margin-left: 430px;" [disabled]='UserDetailsForm.invalid'>Submit</button>
+        <br/>
+    </div>
+    </form>
+</div>

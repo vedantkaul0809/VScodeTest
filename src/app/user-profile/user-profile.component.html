@@ -1,0 +1,143 @@
+
+<div>
+  <div class="inline">
+    <button (click)="onLogoutButton()" class="var" style="margin-left:1380px; margin-right:10px;margin-top: -25px; float: left;">
+      <a style="color: white;">Logout</a> 
+    </button>
+    <button class="var" style="margin-left:1200px; margin-right:10px;margin-top: -25px; float: left;">
+      <a [routerLink]="['/change-password', this.AccountNum]" style="color: white;">Change Password</a> 
+    </button>
+  </div>
+  <div class="sidenav">
+    <a routerLink="/dashboard">Dashboard</a>
+    <a [routerLink]="['/userProfile', this.customId]">User Profile</a>
+    <a [routerLink]="['/account-summary', this.customId]">Account Summary</a>
+    <span style="color:white; margin-left: 17px; font-size: 28px; ">Funds Transfer</span>
+
+        <div >
+            <a style="font-size:larger; margin-left: 40px;" routerLink="/addBeneficiary">Add Beneficiary</a>
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/imps">IMPS Transaction</a>
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/rtgs">RTGS Transaction</a>      
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/neft">NEFT Transaction</a>
+        </div>
+      
+        <a [routerLink]="['/accountStatement', this.AccountNum]">Account Statement</a>
+  </div>
+  <br> 
+<div class="sidenav2">
+<a routerLink="/dashboard">Dashboard</a>
+<a routerLink="/userProfile">User Profile</a>
+<a routerLink="/account-summary/">Account Summary</a>
+<span style="color:white; margin-left: 17px; font-size: 28px; ">Funds Transfer</span>
+
+    <div >
+        <a style="font-size:larger; margin-left: 40px; color:rgb(158, 167, 202) ;" routerLink="/addBeneficiary">Add Beneficiary</a>
+        <a style="font-size:larger;  margin-left: 40px;color:rgb(158, 167, 202)" routerLink="/imps">IMPS Transaction</a>
+        <a style="font-size:larger;  margin-left: 40px;color:rgb(158, 167, 202)" routerLink="/rtgs">RTGS Transaction</a>      
+        <a style="font-size:larger;  margin-left: 40px; color:rgb(158, 167, 202)" routerLink="/neft">NEFT Transaction</a>
+    </div>
+  
+<a routerLink="/accountStatement">Account Statement</a>
+</div>
+
+<div>
+  <h2 style="text-align: center; margin-left: 80px;">User Details</h2>
+  <table class="table">
+    <tr>
+      <th>Id: </th>
+      <td>{{userDetails.Id}}</td>
+    </tr>
+    <tr>
+      <th>FirstName: </th>
+      <td>{{userDetails.FirstName}}</td>
+  </tr>
+   <tr>
+    <th>MiddleName: </th>
+    <td>{{userDetails.MiddleName}}</td>
+  </tr>
+  <tr>
+    <th>LastName: </th>
+    <td>{{userDetails.LastName}}</td>
+  </tr>
+    <tr>
+      <th>Father's Name: </th>
+      <td>{{userDetails.FatherName}}</td>
+    </tr>
+    <tr>
+      <th>Mobile Number: </th>
+      <td>{{userDetails.MobileNumber}}</td>
+    </tr>
+    <tr>
+    <th>Email: </th>
+    <td>{{userDetails.Email}}</td>
+    </tr>
+    <tr>
+      <th>Aadhar Number: </th>
+      <td>{{userDetails.AadharNumber}}</td>
+    </tr>
+    <tr>
+      <th>DOB: </th>
+      <td>{{userDetails.DOB}}</td>
+    </tr>
+    <tr>
+      <th>Residential Address Line 1: </th>
+      <td>{{userDetails.ResidentialAddressLine1}}</td>
+    </tr>
+   <tr>
+      <th>Residential Address Line 2: </th>
+      <td>{{userDetails.ResidentialAddressLine2}}</td>
+   </tr>
+    <tr>
+      <th>Residential Landmark: </th>
+      <td>{{userDetails.ResidentialLandmark}}</td>
+    </tr>
+   <tr>
+      <th>Resident State: </th>
+      <td>{{userDetails.ResidentState}}</td>
+   </tr>
+    <tr>
+      <th>Residential City: </th>
+      <td>{{userDetails.ResidentialCity}}</td>
+    </tr>
+    <tr>
+      <th>Residential PinCode: </th>
+      <td>{{userDetails.ResidentialPinCode}}</td>
+    </tr>
+    <tr>
+      <th>Permanent Address Line 1: </th>
+      <td>{{userDetails.PermanentAddressLine1}}</td>
+    </tr>
+   <tr>
+      <th>Permanent Address Line 2: </th>
+      <td>{{userDetails.PermanentAddressLine2}}</td>
+   </tr>
+    <tr>
+      <th>Permanent Landmark: </th> 
+      <td>{{userDetails.PermanentLandmark}}</td>
+    </tr>
+    <tr>
+      <th>Permanent State: </th>
+      <td>{{userDetails.PermanentState}}</td>
+    </tr>
+    <tr>
+      <th>Permanent City: </th>
+      <td>{{userDetails.PermanentCity}}</td>
+    </tr>
+    <tr>
+      <th>Permanent PinCode: </th>
+      <td>{{userDetails.PermanentPinCode}}</td>
+    </tr>
+    <tr>
+      <th>Occupational Type: </th>
+      <td>{{userDetails.OccupationalType}}</td>
+    </tr>
+    <tr>
+      <th>Source Of Income: </th>
+      <td>{{userDetails.SourceOfIncome}}</td>
+    </tr>
+   <tr>
+      <th>Gross Annual Income: </th>
+      <td>{{userDetails.GrossAnnualIncome}}</td>
+   </tr>
+</table>
+</div>

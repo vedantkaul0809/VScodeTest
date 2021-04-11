@@ -1,0 +1,50 @@
+.formcontent{  
+    width: 700px;
+    height:fit-content ;
+    border: 5px solid rgb(98, 100, 112);
+    padding: 30px;
+    margin-top: 25px;
+    margin-left: 320px;
+}
+
+.button {
+    background-color: rgba(11, 30, 114, 0.877);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+} 
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 500px;
+    margin-left: 60px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align:center;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    background-color: rgba(11, 30, 114, 0.877);
+    color: white;
+    margin-top: 10px;
+}
+
+tr:nth-child(even) {
+    background-color:rgb(214, 217, 231);
+}

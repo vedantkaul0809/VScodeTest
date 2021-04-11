@@ -1,0 +1,61 @@
+<div>
+    <div class="inline">
+      <button (click)="onLogoutButton()" class="var" style="margin-left:1380px; margin-right:10px;margin-top: -25px; float: left;">
+        <a style="color: white;">Logout</a> 
+      </button>
+        <button class="var" style="margin-left:1200px; margin-right:10px;margin-top: -25px; float: left;">
+          <a [routerLink]="['/change-password', this.AccountNum]" style="color: white;">Change Password</a> 
+        </button>
+      </div>
+      <div class="sidenav">
+        <a routerLink="/dashboard">Dashboard</a>
+        <a [routerLink]="['/userProfile', this.customId]">User Profile</a>
+        <a [routerLink]="['/account-summary', this.customId]">Account Summary</a>
+        <span style="color:white; margin-left: 17px; font-size: 28px; ">Funds Transfer</span>
+    
+            <div >
+                <a style="font-size:larger; margin-left: 40px;" routerLink="/addBeneficiary">Add Beneficiary</a>
+                <a style="font-size:larger;  margin-left: 40px" routerLink="/imps">IMPS Transaction</a>
+                <a style="font-size:larger;  margin-left: 40px" routerLink="/rtgs">RTGS Transaction</a>      
+                <a style="font-size:larger;  margin-left: 40px" routerLink="/neft">NEFT Transaction</a>
+            </div>
+          
+            <a [routerLink]="['/accountStatement', this.AccountNum]">Account Statement</a>
+      </div>
+    <form #NeftForm='ngForm' (ngSubmit)='saveTransactionDetails(transactions)'>
+        <br> 
+        <div class="beneficiary">
+            <h2>Initiate NEFT Transaction</h2>
+            <hr/>
+            <label>From Account - </label>
+            <input class="form-control" type="number" id="FromAccount" name="FromAccount"
+            [(ngModel)]='transactions.FromAccountNumber' #FromAccountNumbercontrol='ngModel'/>
+            <br/>
+            <label>To Account - </label>
+            <input class="form-control" type="number" id="ToAccount" name="ToAccount"
+            [(ngModel)]='transactions.ToAccountNumber' #ToAccountNumbercontrol='ngModel'/>
+            <a routerLink="/addBeneficiary">
+                <button class="button" style="font-size: 14px; padding: 10px 22px;">ADD New +</button>
+            </a>
+            <br/>
+            <label>Amount - </label>
+            <input class="form-control" type="number" id="Amount" name="Amount"
+            [(ngModel)]='transactions.Amount' #Amountcontrol='ngModel'/>
+            <br/>
+            <label>Remarks - </label>
+            <input class="form-control" type="text" id="Remarks" name="Remarks"
+            [(ngModel)]='transactions.Remark' #Remarkcontrol='ngModel'/>
+            <br/>
+            <p><b>Please Note :</b></p>
+            <p> 1. Transaction will be executed on the next working day if they are
+            scheduled for Sundays, National Holidays, NEFT Holidays (as declared by RBI).
+            </p> 
+            <p> 2. Timing for NEFT : Monday - Saturday (except 2nd and 4th Saturday) 6:00AM - 6:30PM.
+            </p>
+            <div style="margin-left: 200px;">
+                <button class="button" type='submit' [disabled]='NeftForm.invalid'>Confirm</button>
+                <a routerLink="/dashboard"><button class="button" type='submit'>Cancel</button></a>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,54 @@
+<div>
+    <div class="inline">
+      <button (click)="onLogoutButton()" class="var" style="margin-left:1380px; margin-right:10px;margin-top: -25px; float: left;">
+        <a style="color: white;">Logout</a> 
+      </button>
+        <button class="var" style="margin-left:1200px; margin-right:10px;margin-top: -25px; float: left;">
+          <a [routerLink]="['/change-password', this.AccountNum]" style="color: white;">Change Password</a> 
+        </button>
+      </div>
+    
+      <div class="sidenav">
+        <a routerLink="/dashboard">Dashboard</a>
+        <a [routerLink]="['/userProfile', this.customId]">User Profile</a>
+        <a [routerLink]="['/account-summary', this.customId]">Account Summary</a>
+        <span style="color:white; margin-left: 17px; font-size: 28px; ">Funds Transfer</span>
+    
+            <div >
+                <a style="font-size:larger; margin-left: 40px;" routerLink="/addBeneficiary">Add Beneficiary</a>
+                <a style="font-size:larger;  margin-left: 40px" routerLink="/imps">IMPS Transaction</a>
+                <a style="font-size:larger;  margin-left: 40px" routerLink="/rtgs">RTGS Transaction</a>      
+                <a style="font-size:larger;  margin-left: 40px" routerLink="/neft">NEFT Transaction</a>
+            </div>
+          
+            <a [routerLink]="['/accountStatement', this.AccountNum]">Account Statement</a>
+      </div>
+      <div class="benefbody">
+          <br>
+    <form #beneficiaryform='ngForm' (ngSubmit)='saveBeneficiary(Beneficiary)'>
+        <div class="beneficiary">
+            <h2>Add New Beneficiary</h2>
+            <hr/>
+            <!-- <label>Beneficiary Name - </label>
+            <input class="form-control" type="text" id="BeneficiaryName" name="BeneficiaryName" />
+            <br/> -->
+            <label>Holder Account Number - </label>
+            <input class="form-control" type="number" id="HolderAccountNumber" name="HolderAccountNumber" [(ngModel)]='Beneficiary.HolderAccountNumber'/>
+            <br/>
+            <label>Beneficiary Account Number - </label>
+            <input class="form-control" type="number" id="BeneficiaryAccountNumber" name="BeneficiaryAccountNumber" [(ngModel)]='Beneficiary.BeneficiaryAccountNumber'/>
+            <br/>
+            <!-- <label>Re-Enter Account Number - </label>
+            <input class="form-control" type="number" id="BeneficiaryAccountNumber" name="BeneficiaryAccountNumber"/>
+            <br/> -->
+            <label> Nick Name - </label>
+            <br/>
+            <input class="form-control" type="text" id="NickName" name="NickName" [(ngModel)]='Beneficiary.Nickname'/>
+            <br/>
+            <div style="margin-left: 400px;">
+                <button class="button" type='submit' style="margin-left: 10px;">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>

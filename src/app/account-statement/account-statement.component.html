@@ -1,0 +1,73 @@
+<div>
+  <div class="inline">
+    <button (click)="onLogoutButton()" class="var" style="margin-left:1380px; margin-right:10px;margin-top: -25px; float: left;">
+      <a style="color: white;">Logout</a> 
+    </button>
+    <button class="var" style="margin-left:1200px; margin-right:10px;margin-top: -25px; float: left;">
+      <a [routerLink]="['/change-password', this.AccountNum]" style="color: white;">Change Password</a> 
+    </button>
+  </div>
+ 
+  <div class="sidenav">
+    <a routerLink="/dashboard">Dashboard</a>
+    <a [routerLink]="['/userProfile', this.customId]">User Profile</a>
+    <a [routerLink]="['/account-summary', this.customId]">Account Summary</a>
+    <span style="color:white; margin-left: 17px; font-size: 28px; ">Funds Transfer</span>
+
+        <div >
+            <a style="font-size:larger; margin-left: 40px;" routerLink="/addBeneficiary">Add Beneficiary</a>
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/imps">IMPS Transaction</a>
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/rtgs">RTGS Transaction</a>      
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/neft">NEFT Transaction</a>
+        </div>
+      
+    <a [routerLink]="['/accountStatement', this.AccountNum]">Account Statement</a>
+  </div>
+
+    <br/>
+    <form #AccountStatementForm='ngForm' (ngSubmit)=' showTransactionStatementDate()'>
+      <h2 style="margin-left: 300px;">Account Statement</h2>
+      <br>
+      <div style="float: left; margin-top: 15px; margin-left: 300px;">
+          Statement from:
+          <input type="date" id="fromdate" name="fromdate" [(ngModel)]="fromDate">
+          <!-- required 
+          [(ngModel)]='fromdate' #LastNamecontrol='ngModel'/> -->
+          To
+          <input type="date" id="todate" name="todate" [(ngModel)]="toDate">
+          <!-- required 
+          [(ngModel)]='todate' #LastNamecontrol='ngModel'/> -->
+          <!-- <div style="margin-left: -250px; margin-top: -50px">
+            <button class="button" type='submit' [disabled]='AccountStatementForm.invalid'>Submit</button>
+        </div> -->
+      </div>
+      <br>
+      <div style="margin-left: -250px; margin-top: -50px">
+        <button class="button" type='submit' [disabled]='AccountStatementForm.invalid'>Submit</button>
+    </div>
+        <br/>
+  </form>
+
+  <table *ngIf="transactions">
+    <tr>
+      <th>Debit/Credit</th>
+      <th>From Account Number</th>
+      <th>To Account Number</th>
+      <th>Amount</th>
+      <th>Transaction Type</th>
+      <th>Transaction Date</th>
+      <th>Maturity Instructions</th>
+      <th>Remarks</th>
+    </tr>
+    <tr *ngFor="let transaction of transactions">
+      <td>{{ transaction.FromAccountNumber == userAccountNumber ? 'Debit' : 'Credit' }}</td>
+      <td>{{ transaction.FromAccountNumber }}</td>
+      <td>{{ transaction.ToAccountNumber }}</td>
+      <td>{{ transaction.Amount }}</td>
+      <td>{{ transaction.TransactionType }}</td>
+      <td>{{ transaction.TransactionDate }}</td>
+      <td>{{transaction.MaturityInstruction}}</td>
+      <td>{{transaction.Remark}}</td>
+    </tr>
+  </table>
+</div>

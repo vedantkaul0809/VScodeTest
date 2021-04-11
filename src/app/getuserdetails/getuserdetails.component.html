@@ -1,0 +1,42 @@
+<br> 
+<div class='container'>
+<br>
+        <div style="margin-left: 20px;">
+        <h3>Details of User</h3>
+        <hr>
+            <form #UserDetail='ngForm' (ngSubmit)='postCustomer()'>
+            <div class="well">
+            <input type="radio" name='customerid' ng-model="model.select" id='customerid' 
+                value="{{user.Id}}" [(ngModel)]='customer.CustomerId' checked enabled/>
+           <b>Id:</b> {{user.Id}}<br>
+           <b>Title:</b> {{user.Title}}<br>
+           <b>First Name:</b> {{user.FirstName}}<br>
+           <b>Middle Name:</b> {{user.MiddleName}}<br>
+           <b>Last Name:</b> {{user.LastName}}<br>
+           <b>Father's Name:</b> {{user.FatherName}}<br>
+           <b>Mobile Number:</b> {{user.MobileNumber}}<br>
+           <b>E-mail Address:</b> {{user.Email}}<br>
+           <b>Aadhar Card Number:</b> {{user.AadharNumber}}<br>
+           <b>Date of Birth:</b> {{user.DOB}}<br>
+           <b>Residential Address:</b> {{user.ResidentialAddressLine1}}, {{user.ResidentialAddressLine2}}, {{user.ResidentialLandmark}}<br>
+           <b>State of Residence:</b> {{user.ResidentState}}<br>
+           <b>Residential City:</b> {{user.ResidentialCity}}<br>
+           <b>Residential Pin Code:</b> {{user.ResidentialPinCode}}<br>
+           <b>Permanent Address: </b>{{user.PermanentAddressLine1}}, {{user.PermanentAddressLine2}}, {{user.PermanentLandmark}}<br>
+           <b>Permanent State of Residence:</b> {{user.PermanentState}}<br>
+           <b>Permanent City:</b> {{user.PermanentCity}}<br>
+           <b>Permanent Address Pin Code:</b> {{user.PermanentPinCode}}<br>
+           <b>Occupation Type:</b> {{user.OccupationalType}}<br>
+           <b>Source Of Income: </b>{{user.SourceOfIncome}}<br>
+           <b>Gross Annual Income:</b> {{user.GrossAnnualIncome}}<br>
+           <b>Opted for Net Banking?:</b> {{user.IsNetBanking}}<br>
+           <b>Opted for Debit Card?:</b> {{user.DebitCard}}<br>
+        </div>
+        <br>
+        <button type="submit" class="button">Approve</button>                                   
+        <a style="margin-left:10px;" [routerLink]="['/user-details']" button class="button">Back</a>
+    </form>
+</div>
+</div>
+<br> 
+

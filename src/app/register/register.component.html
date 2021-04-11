@@ -1,0 +1,67 @@
+<div class="container">
+    <br>
+    <div class="formcontent">
+        <h3>New Account Registration</h3>
+    <form #NetBankForm='ngForm' (ngSubmit)='saveCustomerDetails(customerDetails)'>
+    <!-- <div class='form-group' [class.has.error]='idcontrol.touched && idcontrol.invalid'> -->
+    <div>
+        <label for='AccountNumber'>Account Number</label>
+        <input class="form-control" type="number" id='AccountNumber' name='AccountNumber' required
+        [(ngModel)]='customerDetails.AccountNumber' #AccountNumbercontrol='ngModel'/>
+        <!-- <span class="help-block alert-danger">
+            Account Number is Required.
+        </span> -->
+    </div>
+    <br/>
+    <div>
+        <label for='LoginPassword'>Set Login Password</label>
+        <input class="form-control" type="password" id='LoginPassword' name='LoginPassword' required
+        [(ngModel)]='customerDetails.LoginPassword' #LoginPasswordcontrol='ngModel'/>
+        <!-- <span class="help-block alert-danger">
+            Password is Required.
+        </span> -->
+    </div>
+    <br/>
+    <div>
+        <label for='LoginPassword'>Confirm Login Password</label>
+        <input class="form-control" type='password' id='ConfirmLoginPassword' name='ConfirmLoginPassword' required/>
+        <!-- <span class="help-block alert-danger">
+            Please Confirm Login Password.
+        </span> -->
+    </div>
+    <br/>
+    <div>
+        <label for='TransactionPassword'>Set Transaction Password</label>
+        <input class="form-control" type='password' id='TransactionPassword' name='TransactionPassword' required
+        [(ngModel)]='customerDetails.TransactionPassword' #TransactionPasswordcontrol='ngModel'/>
+        <!-- <span class="help-block alert-danger">
+            Transaction Password is Required.
+        </span> -->
+    </div>
+    <br/>
+    <div>
+        <label for='TransactionPassword'>Confirm Transaction Password</label>
+        <input class="form-control" type='password' id='ConfirmTransactionPassword' name='ConfirmTransactionPassword' required/>
+        <!-- <span class="help-block alert-danger">
+            Please Confirm Transaction Password.
+        </span> -->
+    </div>
+    <br/>
+    <div>
+        <label for='OTP'>OTP</label>
+        <input  class="form-control" type='number' id='OTP' name='OTP' required
+        [(ngModel)]='customerDetails.Otp' #Otpcontrol='ngModel'/>
+        <!-- <span class="help-block alert-danger">
+           OTP is Required.
+        </span> -->
+    </div>
+    <br/>
+    <div>
+        <button class="button" type="submit" style="font-size: 14px; padding: 10px 22px; margin-left: 280px;"
+        [disabled]='NetBankForm.invalid'>Submit</button>
+    </div>
+    <br/>
+    
+    </form>
+</div>
+<div>

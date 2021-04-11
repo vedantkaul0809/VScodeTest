@@ -1,0 +1,43 @@
+<div class="container">
+    <br>
+    <div class="formcontent">
+        <h2 style="color: navy; text-align: center;">Login</h2>
+        <form #CustomerDetailsForm='ngForm' (ngSubmit)='saveLogin(customerDetails)'>
+    <!-- <div class='form-group' [class.has.error]='idcontrol.touched && idcontrol.invalid'> -->
+    <div>
+        <label for='CustomerId'>User ID</label>
+        <input class="form-control"  type='text' id='CustomerId' name='CustomerId' required
+        [(ngModel)]='customerDetails.CustomerId' #CustomerIdcontrol='ngModel'/>
+        <!-- <span class="help-block alert-danger">
+            User ID is Required.
+        </span> -->
+    </div>
+    <div>
+        <label for='LoginPassword'>Password</label>
+        <input class="form-control" type='password'  id='LoginPassword' name='LoginPassword' required
+        [(ngModel)]='customerDetails.LoginPassword' #LoginPasswordcontrol='ngModel'/>
+        <!-- <span class="help-block alert-danger">
+            Password is Required.
+        </span> -->
+    </div>
+    <br/>
+    <div>
+        <button class="button" type="submit" style="font-size: 14px; padding: 10px 22px;"
+        [disabled]='CustomerDetailsForm.invalid'>Submit</button>
+        <a style="margin-left:10px;"  routerLink="/home"><button class="button" type="submit">Back</button></a>
+    </div>
+    <br/>
+    <ul class="nav navbar-nav">
+        <li>
+          <a routerLink="/register">First Time User? Register</a>
+        </li>
+        <li>
+            <a routerLink="/forgotId">Forgot User Id?</a>
+        </li>
+        <li>
+            <a routerLink="/forgotPwd">Forgot Password?</a>
+        </li>
+    </ul>
+    </form>
+</div>
+<div>

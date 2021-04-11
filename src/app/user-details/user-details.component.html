@@ -1,0 +1,27 @@
+<br> 
+<div class="formcontent">
+    <h1 style="text-align: center; color:rgba(11, 30, 114, 0.877) ;" >Users Details</h1>
+    <table class="table">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Mobile Number</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let a of userdetails">
+            <td>{{ a.Id }}</td>
+            <td>{{a.Name | uppercase}}</td>
+            <td>{{ a.MobileNumber}}</td>
+            <td>
+              <button class="button" style="font-size: 14px; padding: 5px 12px; margin-left: 10px;" 
+                  type='submit'> <a [routerLink]="['/getuserdetails/', a.Id]" style="color: white;">
+                  Display</a></button>
+            </td>
+      </tr>
+      </table>
+    </div>
+    <br>
+    <p style="float: right; margin-right: 550px;">
+        <button class="button" style="font-size: 14px; margin-left: -30px;" type='submit'> 
+          <a routerLink="/admin-login" style="color: white;">Logout</a></button>
+    </p>

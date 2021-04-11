@@ -1,0 +1,42 @@
+<br>
+<br>
+    <div class="formcontent">
+        <h4 style="text-align: center;">Admin Login</h4> <br>
+        <form #AdminLoginForm='ngForm' (ngSubmit)='saveAdminLogin(admin)'>
+        <!-- <div class='form-group' [class.has.error]='idcontrol.touched && idcontrol.invalid'> -->
+        <div>
+            <label for='AdminId'>Enter ID</label>
+            <input class="form-control" type='text' id='AdminId' name='AdminId' required
+            [(ngModel)]='admin.AdminId' #AdminIdcontrol='ngModel'/>
+            <!-- <span class="help-block alert-danger">
+                User ID is Required.
+            </span> -->
+        </div>
+        <div>
+            <label for='AdminPassword'>Enter Password</label>
+            <input class="form-control" type='password' id='AdminPassword' name='AdminPassword' required maxlength="30"
+            [(ngModel)]='admin.AdminPassword' #AdminPasswordcontrol='ngModel'/> 
+            <!-- <span class="help-block alert-danger">
+                Password is Required.
+            </span> -->
+        </div>
+        <br/>
+        <div>
+            <button class="button" type='submit' [disabled]='AdminLoginForm.invalid'>Submit</button> 
+            <a style="margin-left:10px;" routerLink="/home"><button class="button" type="submit">Back</button></a>
+        </div>
+        <br/>
+        <!-- <ul class="nav navbar-nav">
+            <li>
+              <a routerLink="/create">First Time User? Register</a>
+            </li>
+            <li>
+                <a routerLink="/forgotId">Forgot User Id?</a>
+            </li>
+            <li>
+                <a routerLink="/forgotPwd">Forgot Password?</a>
+            </li>
+        </ul> -->
+        </form>
+    <div>
+    

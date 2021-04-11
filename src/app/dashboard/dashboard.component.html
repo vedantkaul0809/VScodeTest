@@ -1,0 +1,47 @@
+<div>
+  <div >
+    <!-- <button (click)="onLogoutButton()" class="button1"> -->
+      <!-- <a routerLink="" style="color: white;">Logout</a>  -->
+    <!-- </button> -->
+    <button (click)="onLogoutButton()" class="var" style="margin-left:1380px; margin-right:10px;margin-top: -25px; float: left;">
+      <a style="color: white;">Logout</a> 
+    </button>
+    <button class="var" style="margin-left:1200px; margin-right:10px;margin-top: -25px; float: left;">
+      <a [routerLink]="['/change-password', this.AccountNum]" style="color: white;">Change Password</a> 
+    </button>
+  </div>
+ 
+  <div class="sidenav">
+    <a routerLink="/dashboard">Dashboard</a>
+    <a [routerLink]="['/userProfile', this.customId]">User Profile</a>
+    <a [routerLink]="['/account-summary', this.customId]">Account Summary</a>
+    <span style="color:white; margin-left: 17px; font-size: 28px; ">Funds Transfer</span>
+
+        <div >
+            <a style="font-size:larger; margin-left: 40px;" routerLink="/addBeneficiary">Add Beneficiary</a>
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/imps">IMPS Transaction</a>
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/rtgs">RTGS Transaction</a>      
+            <a style="font-size:larger;  margin-left: 40px" routerLink="/neft">NEFT Transaction</a>
+        </div>
+      
+    <a [routerLink]="['/accountStatement', this.AccountNum]">Account Statement</a>
+  </div>
+  <br> 
+  
+  <div class="container">
+
+    <h4> Welcome to your Dashboard </h4> 
+    <hr>
+    Greetings from Reliable Bank Pvt. Ltd. !! <br> 
+    We hope you are having good experience with us.
+    We try to serve you a little better everyday than yesterday. 
+    <hr>
+    <p>Your Customer ID is : {{customId}}</p>
+    <p>Your Account Number is : {{AccountNum}}</p>
+    <hr>
+    In case of any problem, you are welcomed to contact us. <br>
+    We will be priviledged to serve you.
+   <br> <hr>
+   Thank you for your co-operation.
+  </div>
+</div>

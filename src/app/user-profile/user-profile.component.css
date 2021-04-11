@@ -1,0 +1,141 @@
+.sidenav {
+  margin-top: 82px;
+  height:620px;
+  width: 230px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:black;
+  overflow-x: hidden;
+  padding-top: 110px;
+}
+
+.sidenav a { 
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+} 
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin-left: 330px;
+  margin-top: 30px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #c3d2e4;
+}
+
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+  margin-left: 250px;
+  overflow: hidden; 
+  background-color:rgba(11, 30, 114, 0.877);
+  border: none;
+  align-self: center;
+  color: white;
+  /* padding-top: 15px; */
+  padding-left: auto;
+  padding-right: auto;
+  padding-right: -10px;
+  text-align: center;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.sidenav2 {
+  background-color:rgb(26, 36, 78) ;
+  margin-top: 82px;
+  height:620px;
+  width: 230px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top:110px;
+}
+
+.sidenav2 a { 
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+}
+
+.sidenav2 a:hover {
+  color:rgb(134, 164, 238);
+}
+
+.button2 {
+  margin-left: 1100px;
+  margin-top: -80px;
+  overflow: hidden; 
+  background-color:rgba(11, 30, 114, 0.877);
+  border: none;
+  align-self: center;
+  color: white;
+  /* padding-top: 15px; */
+  padding-left: auto;
+  padding-right: auto;
+  padding-right: -10px;
+  text-align: center;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.inline-buttons .one-third {
+  text-align: center;
+}
+
+.inline-buttons .one-third {
+    width: 100%;
+    margin: 20px;
+}
+
+.var {
+  position: absolute;
+  left: -250px;
+  top: 125px;
+  background-color:rgba(11, 30, 114, 0.877);
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
