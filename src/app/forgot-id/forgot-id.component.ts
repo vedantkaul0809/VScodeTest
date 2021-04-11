@@ -6,6 +6,7 @@ import {ActivatedRoute,Router} from '@angular/router';
 
 //file changed
 //file changed by branch 2
+//forgot id change
 @Component({
   selector: 'app-forgot-id',
   templateUrl: './forgot-id.component.html',
