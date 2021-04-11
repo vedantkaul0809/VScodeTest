@@ -4,6 +4,7 @@ import { CustomerServiceService } from './../services/Cust/customer-service.serv
 import { FormsModule } from '@angular/forms';
 import {ActivatedRoute,Router} from '@angular/router';
 
+//file changed
 @Component({
   selector: 'app-forgot-id',
   templateUrl: './forgot-id.component.html',
