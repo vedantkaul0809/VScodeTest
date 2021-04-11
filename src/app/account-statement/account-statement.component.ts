@@ -6,6 +6,7 @@ import { CustomerServiceService } from './../services/Cust/customer-service.serv
 import { FormsModule } from '@angular/forms';
 import {ActivatedRoute,Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-account-statement',
   templateUrl: './account-statement.component.html',
@@ -17,9 +18,9 @@ export class AccountStatementComponent implements OnInit {
   // customerDetails: ICustomer
   // customId: number;
   // AccountNum: number;
-  // AcctNo:number;
-  // Bal: number;
 
+//doing changes here
+//change done
   customId: number;
   AccountNum: number;
   userAccountNumber: number;
