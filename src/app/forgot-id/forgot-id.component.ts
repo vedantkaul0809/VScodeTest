@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import {ActivatedRoute,Router} from '@angular/router';
 
 //file changed
+//file changed by branch 2
 @Component({
   selector: 'app-forgot-id',
   templateUrl: './forgot-id.component.html',
